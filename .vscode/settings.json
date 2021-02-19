@@ -1,0 +1,10 @@
+{
+    "eslint.alwaysShowStatus": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "prettier.enable": false,
+    "cSpell.words": [
+        "reactotron"
+    ]
+}

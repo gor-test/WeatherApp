@@ -28,3 +28,9 @@ export const dailyWeather = createSelector(
   weatherData,
   (wd) => wd && wd.daily,
 );
+
+const location = (state) => state.location;
+export const cityNameSelector = createSelector(
+  location,
+  (l) => l && l.cityName,
+);

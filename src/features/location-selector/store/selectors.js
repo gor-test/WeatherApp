@@ -18,3 +18,13 @@ export const locationDataSelector = createSelector(
   location,
   (l) => l && l.data && l.data.coords,
 );
+
+export const citiesSelector = createSelector(
+  location,
+  (l) => l && l.cities,
+);
+
+export const savedCitiesSelector = createSelector(
+  location,
+  (l) => l && l.savedCities,
+);

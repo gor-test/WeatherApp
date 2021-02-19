@@ -2,11 +2,11 @@ import {
   call, put, select, takeLatest,
 } from 'redux-saga/effects';
 import { getWeatherByLatLong } from '../../../services/weather';
-import { locationDataSelector } from '../../location-selector/selectors';
+import { locationDataSelector } from '../../location-selector/store/selectors';
 
 import { loadWeatherFailure, loadWeatherSuccess, LOAD_WEATHER } from './actions';
 
-export function* loadWeather(options, action) {
+export function* loadWeather() {
   try {
     const locationData = yield select(locationDataSelector);
     if (!locationData) {

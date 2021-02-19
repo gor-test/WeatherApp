@@ -1,1 +1,1 @@
-export { LocationSelectorContainer as LocationSelector } from './container';
+export { LocationSelectorContainer as LocationSelector } from './screen/container';

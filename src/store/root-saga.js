@@ -3,7 +3,7 @@ import {
   call,
   spawn,
 } from 'redux-saga/effects';
-import { locationSagas } from '../features/location-selector/sagas';
+import { locationSagas } from '../features/location-selector/store/sagas';
 import { weatherSagas } from '../features/weather-screen/store/sagas';
 
 export function* rootSaga() {

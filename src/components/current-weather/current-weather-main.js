@@ -7,7 +7,7 @@ import { BASE_IMG_URL } from '../../services/utils/api/constants';
 import { styles } from './styles';
 
 export const CurrentWeatherViewMain = (props) => {
-  const { currentWeatherData } = props;
+  const { currentWeatherData, cityName } = props;
   if (!currentWeatherData) return null;
   const {
     temp,
@@ -17,6 +17,7 @@ export const CurrentWeatherViewMain = (props) => {
   const unit = 'C';
   return (
     <View style={styles.sectionContainer}>
+      <Text style={styles.sectionTitle}>{cityName}</Text>
       <View style={styles.sectionContainerVertical}>
         <View style={styles.sectionLeft}>
           {mainWeather && (<Text style={styles.sectionDescription}>{mainWeather}</Text>)}

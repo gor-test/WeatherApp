@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import {
-  Text, View,
+  Button, Text, View,
 } from 'react-native';
 
-import { styles } from '../../components/current-weather/styles';
-import { WeatherView } from '../weather-screen';
+import { styles } from '../../../components/current-weather/styles';
+import { WeatherView } from '../../weather-screen';
+import { CitySelector } from '../city-selector';
 
 const LocationSelectorView = (props) => {
   const {
@@ -32,8 +33,12 @@ const LocationSelectorView = (props) => {
   if (locationData) {
     return (<WeatherView />);
   }
+
   return (
-    <View />
+    <View style={styles.sectionContainer}>
+      <Button title="Use Current Location" onPress={() => requestLocation()} />
+      <CitySelector />
+    </View>
   );
 };
 

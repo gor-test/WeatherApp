@@ -1,16 +1,21 @@
 import {
-  call, put, takeLatest,
+  call, put, select, takeLatest,
 } from 'redux-saga/effects';
 import { getWeatherByLatLong } from '../../../services/weather';
+import { locationDataSelector } from '../../location-selector/selectors';
 
 import { loadWeatherFailure, loadWeatherSuccess, LOAD_WEATHER } from './actions';
 
 export function* loadWeather(options, action) {
-  const params = {
-    lon: -79.4685,
-    lat: 43.8358,
-  };
   try {
+    const locationData = yield select(locationDataSelector);
+    if (!locationData) {
+      yield put(loadWeatherFailure('No location is selected'));
+    }
+    const params = {
+      lon: locationData.longitude,
+      lat: locationData.latitude,
+    };
     const response = yield call(getWeatherByLatLong, params);
     if (!response) {
       throw Error('API error');

@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { Provider } from 'react-redux';
 import { configureStore } from '../../store';
-import { WeatherView } from '../weather-screen';
+import { LocationSelector } from '../location-selector';
 
 const store = configureStore();
 
@@ -13,7 +13,7 @@ const App = () => (
     <Provider store={store}>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <WeatherView />
+        <LocationSelector />
       </SafeAreaView>
     </Provider>
   </>

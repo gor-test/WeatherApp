@@ -3,11 +3,13 @@ import {
   call,
   spawn,
 } from 'redux-saga/effects';
+import { locationSagas } from '../features/location-selector/sagas';
 import { weatherSagas } from '../features/weather-screen/store/sagas';
 
 export function* rootSaga() {
   const sagas = [
     weatherSagas,
+    locationSagas,
   ];
 
   // eslint-disable-next-line func-names

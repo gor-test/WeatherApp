@@ -4,6 +4,7 @@ export const API_CONSTANTS = {
 };
 
 export const BASE_URL = 'http://api.openweathermap.org';
+export const BASE_IMG_URL = 'http://openweathermap.org/img/wn';
 
 export const ENDPOINTS = {
   weather: {

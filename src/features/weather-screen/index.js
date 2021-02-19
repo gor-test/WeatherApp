@@ -1,1 +1,1 @@
-export { WeatherViewContainer as WeatherView } from './container';
+export { WeatherViewContainer as WeatherView } from './screen/container';

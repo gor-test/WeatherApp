@@ -2,8 +2,8 @@ import { createReducer } from 'reduxsauce';
 
 const initialState = {};
 
-const handlers = [
+const handlers = {
 
-];
+};
 
 export const appReducer = createReducer(initialState, handlers);

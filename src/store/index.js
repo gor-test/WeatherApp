@@ -14,8 +14,8 @@ export const configureStore = () => {
   if (__DEV__) {
     // eslint-disable-next-line global-require
     const tron = require('./reactotron-config').default;
-    sagaOptions.sagaMonitor = tron;
-    // devEnhancers.push(tron.createEnhancer());
+    // sagaOptions.sagaMonitor = tron;
+    devEnhancers.push(tron.createEnhancer());
   }
 
   const sagaMiddleware = createSagaMiddleware(sagaOptions);

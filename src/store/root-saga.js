@@ -1,16 +1,22 @@
 import {
-  call, put, takeEvery, takeLatest,
+  all,
+  call,
+  spawn,
 } from 'redux-saga/effects';
-
-function* fetchUser(action) {
-  try {
-    // const user = yield call(Api.fetchUser, action.payload.userId);
-    yield put({ type: 'USER_FETCH_SUCCEEDED', user });
-  } catch (e) {
-    yield put({ type: 'USER_FETCH_FAILED', message: e.message });
-  }
-}
+import { weatherSagas } from '../features/weather-screen/store/sagas';
 
 export function* rootSaga() {
-  yield takeLatest('USER_FETCH_REQUESTED', fetchUser);
+  const sagas = [
+    weatherSagas,
+  ];
+
+  // eslint-disable-next-line func-names
+  yield all(sagas.map((saga) => spawn(function* () {
+    try {
+      yield call(saga);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(`error running saga: ${saga}`, error);
+    }
+  })));
 }

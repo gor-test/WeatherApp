@@ -6,5 +6,6 @@
     "prettier.enable": false,
     "cSpell.words": [
         "reactotron"
-    ]
+    ],
+    "editor.tabSize": 2
 }

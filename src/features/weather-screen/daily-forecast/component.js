@@ -1,5 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
+import moment from 'moment';
+
 import HorizontalCell from '../../../components/horizontal-weather-cell';
 
 const DailyView = (props) => {
@@ -16,17 +18,17 @@ const DailyView = (props) => {
       }}
     >
       {data.map((item) => {
-        // console.log({ data });
         const {
           dt, temp, humidity, feels_like: feelsLike,
           weather: [{
             icon,
           }] = [{}],
         } = item;
+        const day = moment.unix(dt).format('dddd');
         return (
           <HorizontalCell
             key={dt}
-            title="ddd"
+            title={day}
             icon={icon}
             temp={temp}
             humidity={humidity}

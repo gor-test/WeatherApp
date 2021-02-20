@@ -18,37 +18,57 @@ Run `yarn` in project directory
 `cd ios`
 `pod install`
 `
-### iOS run on simulator
+#### run on simulator
 Run `yarn ios` in project directory. This will run on the current running simulator or will start the new one.
+
+#### run on device
+- Open `WeatherApp` workspace from `./ios` directory with **XCode**
+- Select a developer certificate in *Build Settings*
+- Select device to run on
+- Run
 
 ### Android 
 
-#### Run on simulator
-To run the app on Android emulator, please make sure you have emulator running
+#### run on simulator
+To run the app on Android emulator, please make sure you have emulator running.
+
 To build and start the app:
 `yarn android` in project directory
 
-#### Run on device
-To run the app on Android device, have the device connected to the computer, enable adb debug develope
+#### run on device
+To run the app on Android device, have the device connected to the computer, enable *adb debug* in developer settings.
+
 To build and start the app:
 `yarn android` in project directory
 
 
 ### Time spent
-How much time did you spend on the assignment? Normally, this is expressed in hours.
+10 hours
 ### Assumptions made
-Use this section to tell us about any assumptions that you made when creating your solution.
+- As a location selection use search by city name.
+- No need to show name of current location.
+- Favourite locations are the last selected cities.
+- No multilingual support needed, use default provided data by the service.
+- Project structure should support work with small / medium team or multiple squads.
 ### Shortcuts/Compromises made
-If applicable. Did you do something that you feel could have been done better in a real-world application? Please let us
-know.
+- Strings/captions for UI elements are hardcoded in the code. 
+- No localization support based on device or user selected language.
+- No accessibility concerns are addressed.
+- API URLs are in the code, should be in some config file
+- API keys are in the code, should be remotely configurable 
+- No test are implemented. But the structure and RN supports high unit test coverage. Also E2E and functional tests can be implemented.
+- JavaScript is used for the development. TypeScript would be better to maintainability and dev experience.
+- Basic UI for the functionality is implemented. For the production readiness need to be polished.
 ### Why did you choose the technology/framework you used?
-What were your considerations behind the technology/framework chosen?
+React Native is one of the most popular cross platform frameworks for mobile app development. It renders native UI components to meed performance and quality goals. Have very large open source community supporting the framework and variety of libraries.
 ### Stretch goals attempted
-If applicable, use this area to tell us what stretch goals you attempted. What went well? What do you wish you could have
-done better? If you didn't attempt any of the stretch goals, feel free to let us know why.
+The stretch goals are accomplished with assumptions stated above.
 ### What did you not include in your solution that you want us to know about?
-Were you short on time and not able to include something that you want us to know about? Please list it here so that we
-know that you considered it.
+- Tests
+  -  Unit, Integration and UI functional tests could've been implemented.
+- Building pipeline with CI/CD integration
+
 ### Other information about your submission that you feel it's important that we know if applicable.
+This is demo/educational project, not production ready. No commercial creatives, assets and code snippets are used. Although can be coincidental matches with public things.
 ### Your feedback on this technical challenge
-Have feedback for how we could make this assignment better? Please let us know.
+It's great fun task to complete. To demonstrate ability to structure and design the project I would prefer to other ways of doing as doing boilerplate work takes too much time.

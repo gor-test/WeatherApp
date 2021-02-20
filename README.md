@@ -15,9 +15,10 @@ The app is built using [React Native](https://reactnative.dev/) platform.
 Run `yarn` in project directory
 
 ##### iOS dependencies
-`cd ios`
-
-`pod install`
+```
+cd ios
+pod install
+```
 
 ##### iOS - run on simulator
 Run `yarn ios` in project directory. This will run on the current running simulator or will start the new one.
@@ -35,7 +36,7 @@ To build and start the app:
 `yarn android` in project directory
 
 ##### Android - run on device
-To run the app on Android device, have the device connected to the computer, enable *adb debug* in developer settings.
+To run the app on Android device, have the device connected to the computer, enable *USB debugging* in developer settings.
 
 To build and start the app:
 `yarn android` in project directory

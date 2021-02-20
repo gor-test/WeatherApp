@@ -10,9 +10,7 @@ import CitySelectorView from './component';
 
 const mapDispatchToProps = (dispatch) => ({
   loadCities: (name) => dispatch(loadCitiesAction(name)),
-  selectCity: (cityItem) => dispatch(setLocationAction(
-    { lat: cityItem.lat, lon: cityItem.lon, cityName: cityItem.name },
-  )),
+  selectCity: (cityItem) => dispatch(setLocationAction(cityItem)),
   loadSavedCities: () => dispatch(loadSavedCitiesAction()),
 });
 

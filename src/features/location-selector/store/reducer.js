@@ -8,7 +8,7 @@ const initialState = {
   data: {},
   cities: {
     isLoading: false,
-    data: {},
+    data: [],
   },
   savedCities: [],
 };
@@ -22,6 +22,7 @@ const handleRequestSuccess = (state, { data }) => ({
   ...state,
   isLoading: false,
   data,
+  cityName: '✧ Current Location',
   error: undefined,
 });
 
@@ -47,7 +48,7 @@ const handleSetLocation = (state, { data }) => ({
       longitude: data.lon,
     },
   },
-  cityName: data.cityName,
+  cityName: `${data.name} ${data.country}`,
   error: undefined,
 });
 

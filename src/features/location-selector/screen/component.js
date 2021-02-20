@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {
+  ActivityIndicator,
   Button, Text, View,
 } from 'react-native';
 
@@ -20,23 +21,32 @@ const LocationSelectorView = (props) => {
     }
   }, []);
 
-  if (!isLoading && isPermissionDenied) {
+  if (isLoading) {
     return (
+      <View>
+        <ActivityIndicator />
+      </View>
+    );
+  }
+
+  const locationSection = (isPermissionDenied)
+    ? (
       <View style={styles.sectionContainer}>
         <Text style={styles.sectionTitle}>Weather on current location</Text>
         <Text style={styles.sectionDescription}>
           Please enable location data for the app on your phone settings
         </Text>
       </View>
-    );
-  }
+    )
+    : (<Button title="Use Current Location" onPress={() => requestLocation()} />);
+
   if (locationData) {
     return (<WeatherView />);
   }
 
   return (
     <View style={styles.sectionContainer}>
-      <Button title="Use Current Location" onPress={() => requestLocation()} />
+      {locationSection}
       <CitySelector />
     </View>
   );

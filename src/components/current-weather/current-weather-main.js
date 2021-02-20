@@ -6,6 +6,8 @@ import {
 import { BASE_IMG_URL } from '../../services/utils/api/constants';
 import { styles } from './styles';
 
+const t = (strings, tempExp) => `${Math.round(tempExp)} °`;
+
 export const CurrentWeatherViewMain = (props) => {
   const { currentWeatherData, cityName } = props;
   if (!currentWeatherData) return null;
@@ -21,8 +23,15 @@ export const CurrentWeatherViewMain = (props) => {
       <View style={styles.sectionContainerVertical}>
         <View style={styles.sectionLeft}>
           {mainWeather && (<Text style={styles.sectionDescription}>{mainWeather}</Text>)}
-          <Text style={styles.sectionTitle}>{`${temp} °${unit}`}</Text>
-          <Text style={styles.sectionDescription}>{`Feels like ${feelsLike} °`}</Text>
+          <Text style={styles.sectionTitle}>
+            {t`${temp}`}
+            {unit}
+          </Text>
+          <Text style={styles.sectionDescription}>
+            Feels like
+            {' '}
+            {t`${feelsLike}`}
+          </Text>
         </View>
         <View style={styles.sectionRight}>
           <Image

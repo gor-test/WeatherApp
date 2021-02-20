@@ -57,6 +57,7 @@ export function* loadSavedCities() {
 export function* addToSavedCities({ data }) {
   try {
     const savedCities = yield select(savedCitiesSelector);
+    if (savedCities.find((city) => city.lat === data.lat && city.lon === data.lon)) return;
     const newList = [data];
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 2 && i < savedCities.length; i++) {

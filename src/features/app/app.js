@@ -11,7 +11,7 @@ const store = configureStore();
 const App = () => (
   <>
     <Provider store={store}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="dark-content" translucent backgroundColor="white" />
       <SafeAreaView>
         <LocationSelector />
       </SafeAreaView>

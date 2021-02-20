@@ -41,7 +41,7 @@ const WeatherView = (props) => {
         style={styles.flyoutButton}
         onPress={() => resetLocation()}
       >
-        <Text style={{ fontSize: 30 }}>≡</Text>
+        <Text style={styles.flyoutButtonText}>≡</Text>
       </TouchableOpacity>
     </>
 

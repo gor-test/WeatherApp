@@ -39,15 +39,14 @@ const CitySelectorView = (props) => {
   );
   const listData = [
     {
-      title: 'asd',
+      title: '',
       data: cities.data,
     },
     {
-      title: 'Saved Cities',
+      title: 'Last Used Cities',
       data: savedCities,
     },
   ];
-  // console.log({ listData });
   return (
     <View style={styles.sectionContainer}>
       <Text style={styles.sectionDescription}>Cities</Text>
@@ -58,13 +57,16 @@ const CitySelectorView = (props) => {
         }}
       />
       {cities && cities.isLoading && (<ActivityIndicator style={viewStyles.activityIndicator} />)}
-      <FlatList
-        data={cities.data}
+      <SectionList
+        keyboardShouldPersistTaps="handled"
+        sections={listData}
         renderItem={renderItem}
-        keyExtractor={(item) => `${item.lat}${item.lon}`}
-        // renderSectionHeader={({ section: { title } }) => (
-        //   <Text>{title}</Text>
-        // )}
+        keyExtractor={(item, index) => `${item.lat}${item.lon}${index}`}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text>
+            {title}
+          </Text>
+        )}
       />
     </View>
   );

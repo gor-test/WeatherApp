@@ -11,8 +11,13 @@ export const styles = StyleSheet.create({
     bottom: 40,
     right: 30,
     height: 50,
-    backgroundColor: '#fff',
+    backgroundColor: 'lightgray',
     borderRadius: 100,
     opacity: 0.5,
+  },
+  flyoutButtonText: {
+    fontSize: 40,
+    top: -1,
+    left: -1,
   },
 });

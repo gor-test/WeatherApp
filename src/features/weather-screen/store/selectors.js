@@ -30,6 +30,7 @@ export const dailyWeather = createSelector(
 );
 
 const location = (state) => state.location;
+
 export const cityNameSelector = createSelector(
   location,
   (l) => l && l.cityName,

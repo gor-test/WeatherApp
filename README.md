@@ -1,42 +1,42 @@
 ## Notes
-Any notes you might want us to be aware of..
+
 ### Date
 February 20 2021
 ### Instructions for how to build & run the app
 The app is built using [React Native](https://reactnative.dev/) platform.
 
-## Environment setup
+#### Environment setup
 * [React Native CLI Quickstart](https://reactnative.dev/docs/environment-setup) steps to setup the development environment.
 * Install [yarn](https://classic.yarnpkg.com/en/docs/install) 1.19.1 or above
 
-## Build & Run
+#### Build & Run
 
-### Installing dependencies
+##### Installing dependencies
 Run `yarn` in project directory
 
-### iOS dependencies
-`cd ios`
-`pod install`
-`
-#### run on simulator
+##### iOS dependencies
+```
+cd ios
+pod install
+```
+
+##### iOS - run on simulator
 Run `yarn ios` in project directory. This will run on the current running simulator or will start the new one.
 
-#### run on device
+##### iOS - run on device
 - Open `WeatherApp` workspace from `./ios` directory with **XCode**
 - Select a developer certificate in *Build Settings*
 - Select device to run on
 - Run
 
-### Android 
-
-#### run on simulator
+##### Android - run on simulator
 To run the app on Android emulator, please make sure you have emulator running.
 
 To build and start the app:
 `yarn android` in project directory
 
-#### run on device
-To run the app on Android device, have the device connected to the computer, enable *adb debug* in developer settings.
+##### Android - run on device
+To run the app on Android device, have the device connected to the computer, enable *USB debugging* in developer settings.
 
 To build and start the app:
 `yarn android` in project directory
@@ -58,17 +58,16 @@ To build and start the app:
 - API keys are in the code, should be remotely configurable 
 - No test are implemented. But the structure and RN supports high unit test coverage. Also E2E and functional tests can be implemented.
 - JavaScript is used for the development. TypeScript would be better to maintainability and dev experience.
-- Basic UI for the functionality is implemented. For the production readiness need to be polished.
+- Very basic UI for the functionality is implemented. For the production readiness need to be polished.
 ### Why did you choose the technology/framework you used?
-React Native is one of the most popular cross platform frameworks for mobile app development. It renders native UI components to meed performance and quality goals. Have very large open source community supporting the framework and variety of libraries.
+React Native is one of the most popular cross platform frameworks for mobile app development. It renders native UI components to meet performance and quality goals. There is a very large open source community supporting the framework and variety of libraries.
 ### Stretch goals attempted
 The stretch goals are accomplished with assumptions stated above.
 ### What did you not include in your solution that you want us to know about?
-- Tests
-  -  Unit, Integration and UI functional tests could've been implemented.
+- Tests - Unit, Integration and UI functional tests could've been implemented.
 - Building pipeline with CI/CD integration
 
 ### Other information about your submission that you feel it's important that we know if applicable.
 This is demo/educational project, not production ready. No commercial creatives, assets and code snippets are used. Although can be coincidental matches with public things.
 ### Your feedback on this technical challenge
-It's great fun task to complete. To demonstrate ability to structure and design the project I would prefer to other ways of doing as doing boilerplate work takes too much time.
+It was a fun task to complete. Although, to demonstrate an ability to structure and design a project I would prefer to use other approaches. As doing boilerplate work takes too much time.

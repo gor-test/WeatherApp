@@ -24,7 +24,10 @@ const LocationSelectorView = (props) => {
   if (isLoading) {
     return (
       <View>
-        <ActivityIndicator />
+        <ActivityIndicator
+          size="large"
+          color="#000000"
+        />
       </View>
     );
   }

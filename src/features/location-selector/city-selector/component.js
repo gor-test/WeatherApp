@@ -42,11 +42,13 @@ const CitySelectorView = (props) => {
       title: '',
       data: cities.data,
     },
-    {
+  ];
+  if (savedCities && savedCities.length) {
+    listData.push({
       title: 'Last Used Cities',
       data: savedCities,
-    },
-  ];
+    });
+  }
   return (
     <View style={styles.sectionContainer}>
       <Text style={styles.sectionDescription}>Cities</Text>
@@ -56,7 +58,13 @@ const CitySelectorView = (props) => {
           loadCities(text);
         }}
       />
-      {cities && cities.isLoading && (<ActivityIndicator style={viewStyles.activityIndicator} />)}
+      {cities && cities.isLoading
+      && (
+      <ActivityIndicator
+        style={viewStyles.activityIndicator}
+        color="#000000"
+      />
+      )}
       <SectionList
         keyboardShouldPersistTaps="handled"
         sections={listData}

@@ -23,7 +23,10 @@ const WeatherView = (props) => {
   }, []);
   if (isLoading || !current) {
     return (
-      <ActivityIndicator />
+      <ActivityIndicator
+        size="large"
+        color="#000000"
+      />
     );
   }
 

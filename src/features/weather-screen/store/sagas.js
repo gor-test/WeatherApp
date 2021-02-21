@@ -21,7 +21,7 @@ export function* loadWeather() {
       throw Error('API error');
     }
     if (response.ok !== true) {
-      throw Error(`API error ${response.status} ${response.data && response.data.message}`);
+      throw Error('API error');
     }
     yield put(loadWeatherSuccess(response.data));
   } catch (error) {

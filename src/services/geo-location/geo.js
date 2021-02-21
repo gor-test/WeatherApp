@@ -1,12 +1,14 @@
 import Geolocation from '@react-native-community/geolocation';
+import { PermissionsAndroid, Platform } from 'react-native';
 
-export const requestPosition = () => new Promise(
+const locationPermission = PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION;
+
+const retrievePosition = () => new Promise(
   (resolve, reject) => {
     Geolocation.setRNConfiguration({
       skipPermissionRequests: false,
       authorizationLevel: 'whenInUse',
     });
-
     Geolocation.getCurrentPosition(
       (position) => {
         resolve(position);
@@ -18,6 +20,17 @@ export const requestPosition = () => new Promise(
     );
   },
 );
+
+export const requestPosition = async () => {
+  if (Platform.OS === 'android') {
+    const permissionGranted = await PermissionsAndroid.check(locationPermission);
+    if (!permissionGranted) {
+      const requestGranted = await PermissionsAndroid.request(locationPermission);
+      if (!requestGranted) return 'Location permission denied';
+    }
+  }
+  return retrievePosition();
+};
 
 export const watchPosition = () => new Promise(
   (resolve) => {

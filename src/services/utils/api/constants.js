@@ -3,8 +3,8 @@ export const API_CONSTANTS = {
   appid: '544802f65da5f14aaeaa8fd9b321cd80', // need to be moved out from the code
 };
 
-export const BASE_URL = 'http://api.openweathermap.org';
-export const BASE_IMG_URL = 'http://openweathermap.org/img/wn';
+export const BASE_URL = 'https://api.openweathermap.org';
+export const BASE_IMG_URL = 'https://openweathermap.org/img/wn';
 
 export const ENDPOINTS = {
   weather: {
